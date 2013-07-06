@@ -78,7 +78,7 @@ class EMCImdbScan(Screen):
 				<!-- Movie Listbox -->
 				<widget name="menulist" position="220,80" size="772,420" selectionPixmap="/usr/lib/enigma2/python/Plugins/Extensions/EnhancedMovieCenter/img/cursor.png" scrollbarMode="showOnDemand" transparent="1" enableWrapAround="on" />
 				<!-- Cover picture -->
-				<widget name="poster" position="10,40" size="185,230" zPosition="4" alphatest="on" />
+				<widget name="poster" position="10,40" size="146,215" zPosition="4" alphatest="on" />
 				<!-- Amount of "downloaded", "exist", and "not found" covers -->
 				<widget name="download" position="10,371" size="200,24" zPosition="0" font="Regular;21" halign="left" valign="center" transparent="1" foregroundColor="#ffffff" backgroundColor="#000000"/>
 				<widget name="exist" position="10,323" size="200,24" zPosition="0" font="Regular;21" halign="left" valign="center" transparent="1" foregroundColor="#ffffff" backgroundColor="#000000"/>
@@ -606,7 +606,7 @@ class EMCImdbScan(Screen):
 		sc = AVSwitch().getFramebufferScale() # Maybe save during init
 		size = self["poster"].instance.size()
 		if self.picload:
-			self.picload.setPara((size.width(), size.height(), sc[0], sc[1], False, 1, "#00000000")) # Background dynamically
+			self.picload.setPara((size.width(), size.height(), sc[0], sc[1], False, 1, "#0x000000ff")) # Background dynamically
 			#self.picload.startDecode(poster_path)
 			if self.picload.startDecode(poster_path, 0, 0, False) == 0:
 				#def showCoverCallback(self, picInfo=None):
@@ -683,7 +683,7 @@ class getCover(Screen):
 	if getDesktop(0).size().width() == 1280:
 		skin = """
 			<screen position="center,center" size="1000,560" title="EMC Cover Selecter" >
-				<widget name="poster" zPosition="2" position="10,10" size="185,230" alphatest="on" />
+				<widget name="poster" zPosition="2" position="10,10" size="146,215" alphatest="on" />
 				<widget name="menulist" position="220,10" size="760,507" selectionPixmap="/usr/lib/enigma2/python/Plugins/Extensions/EnhancedMovieCenter/img/cursor.png" scrollbarMode="showOnDemand" transparent="1" enableWrapAround="on" />
 				<widget name="info" position="10,535" size="990,24" zPosition="0" font="Regular;21" halign="left" valign="center" transparent="1" foregroundColor="#ffffff" backgroundColor="#000000"/>
 			</screen>"""
